@@ -15,6 +15,7 @@ export default function Item(props) {
   // we need useParams to grab the dynamic parts of the path (:itemID).
 
   const item = items.find(i => String(i.id) === id.id)
+  console.log(item)
 
 
   // This guards against a crash (the data is not available instantaneously)
@@ -41,8 +42,8 @@ export default function Item(props) {
       {/* 👉 STEP 9 - Here go the Routes for `<current path>/shipping` and `<current path>/description` */}
       {/* These Routes should render <ItemDetails />  */}
       <Routes>
-        <Route path='/shipping' element={<ItemDetails/>}/>
-        <Route path='/description' element={<ItemDetails/>}/>
+        <Route path='/shipping' element={<ItemDetails text={item.shipping}/>}/>
+        <Route path='/description' element={<ItemDetails text={item.description}/>}/>
       </Routes>
 
     </div>
