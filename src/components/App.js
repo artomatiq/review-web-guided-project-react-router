@@ -19,8 +19,13 @@ export default function App(props) {
       return Promise.resolve({ success: true, data })
     }
     // fetching the stock after first render
-    fetchStock().then(res => setStock(res.data))
+    fetchStock().then(res => {
+      console.log('data received', res.data)
+      setStock(res.data)
+    })
   }, [])
+
+  console.log('state updated with data', stock)
 
   return (
     <div className='App'>
@@ -40,7 +45,7 @@ export default function App(props) {
 
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='items-list' element={<ItemsList/>}/>
+        <Route path='items-list' element={<ItemsList items={stock}/>}/>
       </Routes>
 
     </div>
