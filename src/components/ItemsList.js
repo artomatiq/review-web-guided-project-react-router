@@ -1,11 +1,9 @@
 import React from 'react'
 // We'll need a Link from 'react-router-dom'
-import {Link, Routes, Route} from 'react-router-dom';
-import Item from './Item';
+import {Link} from 'react-router-dom';
 
 export default function ItemsList(props) {
   const { items } = props
-  console.log(items)
 
   return (
     <div className='items-list-wrapper'>
@@ -28,10 +26,6 @@ export default function ItemsList(props) {
           <p>${item.price}</p>
         </div>
       ))}
-
-      <Routes>
-        <Route path='items-list/*' element={<Item/>}/>
-      </Routes>
 
     </div>
 

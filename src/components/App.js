@@ -20,12 +20,9 @@ export default function App(props) {
     }
     // fetching the stock after first render
     fetchStock().then(res => {
-      console.log('data received', res.data)
       setStock(res.data)
     })
   }, [])
-
-  console.log('state updated with data', stock)
 
   return (
     <div className='App'>
@@ -46,6 +43,7 @@ export default function App(props) {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='items-list' element={<ItemsList items={stock}/>}/>
+        <Route path='items-list/:id' element={<Item items={stock}/>}/>
       </Routes>
 
     </div>

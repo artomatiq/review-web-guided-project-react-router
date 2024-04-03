@@ -5,7 +5,7 @@ export default function ItemDetails(props) {
 
   return (
     <div>
-      <p className='item-details'>{text}</p>
+      <p className='item-details'>hello{text}</p>
     </div>
   )
 }
