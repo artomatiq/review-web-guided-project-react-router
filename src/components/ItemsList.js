@@ -1,5 +1,4 @@
 import React from 'react'
-// We'll need a Link from 'react-router-dom'
 import {Link} from 'react-router-dom';
 
 export default function ItemsList(props) {
@@ -12,7 +11,6 @@ export default function ItemsList(props) {
           className='item-card'
           key={item.id}
         >
-          {/* 👉 STEP 6 - Link starts, navigates us from <current url> to <current url>/<id of the item> */}
           <Link to={`${item.id}`}>
             <img
               className='items-list-image'
@@ -21,14 +19,12 @@ export default function ItemsList(props) {
             />
             <p>{item.name}</p>
           </Link>
-          {/* Link ends */}
 
           <p>${item.price}</p>
         </div>
       ))}
 
     </div>
-
-
   )
 }
+
